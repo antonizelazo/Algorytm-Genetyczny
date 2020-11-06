@@ -12,9 +12,29 @@ namespace Algorytm_Genetyczny
 
         public Osobnik()
         {
+            do
+            {
                 this.a = Operacje.losujLiczbe(1, 9);
                 this.b = Operacje.losujLiczbe(1, 9);
                 this.c = Operacje.losujLiczbe(1, 9);
+            } while (czyRamionaWZlejProporcji());
+            this.pole = obliczPole();
+        }
+
+        private double obliczPole()
+        {
+            double p = (a + b + c) / 2;
+            double liczba = p * (p - a) * (p - b) * (p - c);
+            return Math.Sqrt(liczba);
+        }
+
+        private bool czyRamionaWZlejProporcji()
+        {
+            if (this.a + this.b > this.c && this.b + this.c > this.a && this.c + this.a > this.b)
+            {
+                return false;
+            }
+            return true;
         }
 
         public override string ToString()

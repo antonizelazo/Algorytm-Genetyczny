@@ -19,5 +19,17 @@ namespace Algorytm_Genetyczny
         {
             textBox.Text = populacja.ToString();
         }
+
+        //System.Windows.Forms.ListBox
+        public static void sprawdzBlokadeList(System.Windows.Forms.ListBox lista1, System.Windows.Forms.NumericUpDown standard)
+        {
+            if (lista1.SelectedIndex == 0)
+            {
+                standard.Enabled = false;
+            } else if (lista1.SelectedIndex == 1)
+            {
+                standard.Enabled = true;
+            }
+        }
     }
 }

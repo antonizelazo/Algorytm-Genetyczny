@@ -32,7 +32,15 @@
             this.btnLosujPopulacje = new System.Windows.Forms.Button();
             this.labelIloscOsobnikow = new System.Windows.Forms.Label();
             this.numericUpDownIleOsobnikow = new System.Windows.Forms.NumericUpDown();
+            this.btnSortujPopulacje = new System.Windows.Forms.Button();
+            this.labelOcenaOsobnikow = new System.Windows.Forms.Label();
+            this.listBoxOcenaOsobnikow = new System.Windows.Forms.ListBox();
+            this.labelRestrykcyjna = new System.Windows.Forms.Label();
+            this.labelNaturnalna = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDownStandard = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIleOsobnikow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStandard)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxWidokOsobnikow
@@ -48,7 +56,7 @@
             // 
             // btnLosujPopulacje
             // 
-            this.btnLosujPopulacje.Location = new System.Drawing.Point(273, 50);
+            this.btnLosujPopulacje.Location = new System.Drawing.Point(273, 38);
             this.btnLosujPopulacje.Name = "btnLosujPopulacje";
             this.btnLosujPopulacje.Size = new System.Drawing.Size(197, 23);
             this.btnLosujPopulacje.TabIndex = 1;
@@ -59,7 +67,7 @@
             // labelIloscOsobnikow
             // 
             this.labelIloscOsobnikow.AutoSize = true;
-            this.labelIloscOsobnikow.Location = new System.Drawing.Point(274, 21);
+            this.labelIloscOsobnikow.Location = new System.Drawing.Point(270, 12);
             this.labelIloscOsobnikow.Name = "labelIloscOsobnikow";
             this.labelIloscOsobnikow.Size = new System.Drawing.Size(109, 26);
             this.labelIloscOsobnikow.TabIndex = 3;
@@ -67,7 +75,7 @@
             // 
             // numericUpDownIleOsobnikow
             // 
-            this.numericUpDownIleOsobnikow.Location = new System.Drawing.Point(389, 24);
+            this.numericUpDownIleOsobnikow.Location = new System.Drawing.Point(389, 12);
             this.numericUpDownIleOsobnikow.Minimum = new decimal(new int[] {
             4,
             0,
@@ -83,11 +91,92 @@
             0,
             0});
             // 
+            // btnSortujPopulacje
+            // 
+            this.btnSortujPopulacje.Location = new System.Drawing.Point(273, 296);
+            this.btnSortujPopulacje.Name = "btnSortujPopulacje";
+            this.btnSortujPopulacje.Size = new System.Drawing.Size(197, 23);
+            this.btnSortujPopulacje.TabIndex = 5;
+            this.btnSortujPopulacje.Text = "Sortuj Populacje";
+            this.btnSortujPopulacje.UseVisualStyleBackColor = true;
+            // 
+            // labelOcenaOsobnikow
+            // 
+            this.labelOcenaOsobnikow.AutoSize = true;
+            this.labelOcenaOsobnikow.Location = new System.Drawing.Point(270, 78);
+            this.labelOcenaOsobnikow.Name = "labelOcenaOsobnikow";
+            this.labelOcenaOsobnikow.Size = new System.Drawing.Size(73, 26);
+            this.labelOcenaOsobnikow.TabIndex = 6;
+            this.labelOcenaOsobnikow.Text = "Jak ocewniać\r\nosobników?";
+            // 
+            // listBoxOcenaOsobnikow
+            // 
+            this.listBoxOcenaOsobnikow.FormattingEnabled = true;
+            this.listBoxOcenaOsobnikow.Location = new System.Drawing.Point(350, 78);
+            this.listBoxOcenaOsobnikow.Name = "listBoxOcenaOsobnikow";
+            this.listBoxOcenaOsobnikow.Size = new System.Drawing.Size(120, 30);
+            this.listBoxOcenaOsobnikow.TabIndex = 7;
+            this.listBoxOcenaOsobnikow.SelectedIndexChanged += new System.EventHandler(this.listBoxOcenaOsobnikow_SelectedIndexChanged);
+            // 
+            // labelRestrykcyjna
+            // 
+            this.labelRestrykcyjna.AutoSize = true;
+            this.labelRestrykcyjna.Location = new System.Drawing.Point(270, 121);
+            this.labelRestrykcyjna.Name = "labelRestrykcyjna";
+            this.labelRestrykcyjna.Size = new System.Drawing.Size(174, 26);
+            this.labelRestrykcyjna.TabIndex = 8;
+            this.labelRestrykcyjna.Text = "     metoda Restrykcyjna\r\n-wybierane będą najlepsze osobniki";
+            // 
+            // labelNaturnalna
+            // 
+            this.labelNaturnalna.AutoSize = true;
+            this.labelNaturnalna.Location = new System.Drawing.Point(270, 158);
+            this.labelNaturnalna.Name = "labelNaturnalna";
+            this.labelNaturnalna.Size = new System.Drawing.Size(192, 65);
+            this.labelNaturnalna.TabIndex = 9;
+            this.labelNaturnalna.Text = "     metoda Naturalna\r\n-wybrane będą osobniki które wypadną\r\nnajlepiej w rankingu" +
+    "\r\n-ranking bierze pod uwagę obniżone\r\nstandardy populacji";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(270, 241);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 52);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "standardy osobników\r\npopulacji (w %):\r\nim niższe wym większa szansa że słabszy\r\no" +
+    "sobnik przetrwa kosztem silniejszego";
+            // 
+            // numericUpDownStandard
+            // 
+            this.numericUpDownStandard.Location = new System.Drawing.Point(389, 241);
+            this.numericUpDownStandard.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownStandard.Name = "numericUpDownStandard";
+            this.numericUpDownStandard.Size = new System.Drawing.Size(81, 20);
+            this.numericUpDownStandard.TabIndex = 11;
+            this.numericUpDownStandard.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownStandard.Value = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 445);
+            this.Controls.Add(this.numericUpDownStandard);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelNaturnalna);
+            this.Controls.Add(this.labelRestrykcyjna);
+            this.Controls.Add(this.listBoxOcenaOsobnikow);
+            this.Controls.Add(this.labelOcenaOsobnikow);
+            this.Controls.Add(this.btnSortujPopulacje);
             this.Controls.Add(this.numericUpDownIleOsobnikow);
             this.Controls.Add(this.labelIloscOsobnikow);
             this.Controls.Add(this.btnLosujPopulacje);
@@ -95,6 +184,7 @@
             this.Name = "Form1";
             this.Text = "Algorytm genetyczny";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIleOsobnikow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStandard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,6 +196,13 @@
         private System.Windows.Forms.Button btnLosujPopulacje;
         private System.Windows.Forms.Label labelIloscOsobnikow;
         private System.Windows.Forms.NumericUpDown numericUpDownIleOsobnikow;
+        private System.Windows.Forms.Button btnSortujPopulacje;
+        private System.Windows.Forms.Label labelOcenaOsobnikow;
+        private System.Windows.Forms.ListBox listBoxOcenaOsobnikow;
+        private System.Windows.Forms.Label labelRestrykcyjna;
+        private System.Windows.Forms.Label labelNaturnalna;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericUpDownStandard;
     }
 }
 

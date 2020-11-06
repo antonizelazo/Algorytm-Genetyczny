@@ -15,12 +15,20 @@ namespace Algorytm_Genetyczny
         public Form1()
         {
             InitializeComponent();
+            listBoxOcenaOsobnikow.Items.Add("Restrykcyjnie");
+            listBoxOcenaOsobnikow.Items.Add("Naturalnie");
+            listBoxOcenaOsobnikow.SelectedIndex = 0;
         }
 
         private void btnLosujPopulacje_Click(object sender, EventArgs e)
         {
             Populacja populacja = new Populacja(Decimal.ToInt32(numericUpDownIleOsobnikow.Value));
             Operacje.wstawDoTextBox(textBoxWidokOsobnikow, populacja);
+        }
+
+        private void listBoxOcenaOsobnikow_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Operacje.sprawdzBlokadeList(listBoxOcenaOsobnikow, numericUpDownStandard);
         }
     }
 }
