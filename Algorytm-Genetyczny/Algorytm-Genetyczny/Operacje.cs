@@ -31,5 +31,12 @@ namespace Algorytm_Genetyczny
                 standard.Enabled = true;
             }
         }
+
+        public static void sortujPopulacje(Populacja populacja, System.Windows.Forms.ListBox funkcjaOceny, System.Windows.Forms.NumericUpDown nudStandard)
+        {
+            double standard = Decimal.ToDouble(nudStandard.Value);
+            bool czyRestrykcyjnie = (funkcjaOceny.SelectedIndex == 0) ? true : false;
+            populacja.sortuj(czyRestrykcyjnie, standard);
+        }
     }
 }

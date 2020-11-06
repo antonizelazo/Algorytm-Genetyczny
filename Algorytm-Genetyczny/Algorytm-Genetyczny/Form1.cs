@@ -12,6 +12,7 @@ namespace Algorytm_Genetyczny
 {
     public partial class Form1 : Form
     {
+        Populacja populacja;
         public Form1()
         {
             InitializeComponent();
@@ -22,13 +23,20 @@ namespace Algorytm_Genetyczny
 
         private void btnLosujPopulacje_Click(object sender, EventArgs e)
         {
-            Populacja populacja = new Populacja(Decimal.ToInt32(numericUpDownIleOsobnikow.Value));
+            populacja = new Populacja(Decimal.ToInt32(numericUpDownIleOsobnikow.Value));
             Operacje.wstawDoTextBox(textBoxWidokOsobnikow, populacja);
+            listBoxOcenaOsobnikow.Enabled = true;
+            btnSortujPopulacje.Enabled = true;
         }
 
         private void listBoxOcenaOsobnikow_SelectedIndexChanged(object sender, EventArgs e)
         {
             Operacje.sprawdzBlokadeList(listBoxOcenaOsobnikow, numericUpDownStandard);
+        }
+
+        private void btnSortujPopulacje_Click(object sender, EventArgs e)
+        {
+            Operacje.sortujPopulacje(populacja,listBoxOcenaOsobnikow,numericUpDownStandard);
         }
     }
 }

@@ -29,6 +29,39 @@ namespace Algorytm_Genetyczny
             }
         }
 
+        public void obliczRank(double standard)
+        {
+            int n = populacja.Length;
+            for (int i = 0; i < n; i++)
+            {
+                populacja[i].obliczRanking(i + 1, n, standard);
+            }
+        }
+
+        public void sortuj(bool czyRestrykcyjnie, double standard)
+        {
+            int n = populacja.Length;
+            do
+            {
+                for (int i = 0; i < n - 1; i++)
+                {
+                    if (populacja[i].dajPole() > populacja[i + 1].dajPole())
+                    {
+                        Osobnik tmp = populacja[i];
+                        populacja[i] = populacja[i + 1];
+                        populacja[i + 1] = tmp;
+                    }
+                }
+                n--;
+            } while (n > 1);
+
+            if (!czyRestrykcyjnie)
+            {
+                // do zrobienie
+                // jest obliczanie rankingu zrobione
+            }
+        }
+
         public int Length()
         {
             return this.populacja.Length;

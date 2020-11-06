@@ -93,12 +93,14 @@
             // 
             // btnSortujPopulacje
             // 
+            this.btnSortujPopulacje.Enabled = false;
             this.btnSortujPopulacje.Location = new System.Drawing.Point(273, 296);
             this.btnSortujPopulacje.Name = "btnSortujPopulacje";
             this.btnSortujPopulacje.Size = new System.Drawing.Size(197, 23);
             this.btnSortujPopulacje.TabIndex = 5;
             this.btnSortujPopulacje.Text = "Sortuj Populacje";
             this.btnSortujPopulacje.UseVisualStyleBackColor = true;
+            this.btnSortujPopulacje.Click += new System.EventHandler(this.btnSortujPopulacje_Click);
             // 
             // labelOcenaOsobnikow
             // 
@@ -111,6 +113,7 @@
             // 
             // listBoxOcenaOsobnikow
             // 
+            this.listBoxOcenaOsobnikow.Enabled = false;
             this.listBoxOcenaOsobnikow.FormattingEnabled = true;
             this.listBoxOcenaOsobnikow.Location = new System.Drawing.Point(350, 78);
             this.listBoxOcenaOsobnikow.Name = "listBoxOcenaOsobnikow";
