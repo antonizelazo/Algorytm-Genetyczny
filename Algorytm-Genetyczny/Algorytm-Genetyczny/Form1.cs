@@ -16,5 +16,11 @@ namespace Algorytm_Genetyczny
         {
             InitializeComponent();
         }
+
+        private void btnLosujPopulacje_Click(object sender, EventArgs e)
+        {
+            Populacja populacja = new Populacja(Decimal.ToInt32(numericUpDownIleOsobnikow.Value));
+            Operacje.wstawDoTextBox(textBoxWidokOsobnikow, populacja);
+        }
     }
 }
